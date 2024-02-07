@@ -10,6 +10,8 @@ from api.models import db
 from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask_jwt_extended import JWTManager
+from flask_cors import CORS
 
 # from models import Person
 
