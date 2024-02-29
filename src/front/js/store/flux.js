@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  };
 		  try {
 			const resp = await fetch(
-			  "https://glorious-chainsaw-4xxqp4pp4xwcqq7r-3001.app.github.dev/api/register",
+			  process.env.BACKEND_URL + "/api/signup",
 			  opts
 			);
 			const data = await resp.json();
@@ -87,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
 		  try {
 			const resp = await fetch(
-			  "https://glorious-chainsaw-4xxqp4pp4xwcqq7r-3001.app.github.dev/api/token",
+				process.env.BACKEND_URL + "/api/token",
 			  opts
 			);
 			if (resp.status !== 200) {
@@ -114,7 +114,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		  try {
 			// fetching data from the backend
 			const resp = await fetch(
-			  "https://glorious-chainsaw-4xxqp4pp4xwcqq7r-3001.app.github.dev/api/hello",
+			  process.env.BACKEND_URL + "/api/hello",
 			  opts
 			);
 			const data = await resp.json();
