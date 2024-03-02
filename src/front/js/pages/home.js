@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import Mew from "../../img/Mew.jpg"
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -12,7 +13,11 @@ export const Home = () => {
   }, [store.token]);
 
   return (
-    <div className="text-center mt-5">
+    <div className="ms-auto">
+
+    {!sessionStorage.getItem("token") ? (
+
+      <div className="text-center mt-5">
       <h1>Hello Rigo!!</h1>
       <p>
         <img src={rigoImageUrl} />
@@ -24,6 +29,28 @@ export const Home = () => {
           Read documentation
         </a>
       </p>
+      </div>
+
+    ) : (
+    <div className="text-center mt-5">
+      <h1>Hello User!!</h1>
+      <p>
+        <img src={Mew} />
+      </p>
+      <div className="alert alert-info">{store.message}</div>
+      <p>
+        This boilerplate comes with lots of documentation:{" "}
+        <a href="https://start.4geeksacademy.com/starters/react-flask">
+          Read documentation
+        </a>
+      </p>
     </div>
-  );
-};
+
+
+    )}
+    </div>
+
+    );
+  };
+
+   
